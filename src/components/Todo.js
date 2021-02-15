@@ -57,7 +57,7 @@ class Todo extends Component {
                 <Navbar bg="primary" variant="dark">
                     <Navbar.Brand href="#home">Todo-App</Navbar.Brand>
                     <Button variant="outline-light" onClick={this.logout}
-                        style={{ float: 'right' }}>Logout</Button>
+                        style={{ position:'absolute',right:170 }}>LOGOUT</Button>
                 </Navbar>
 
                 <div className="card" style={{ marginTop: 5 }}>

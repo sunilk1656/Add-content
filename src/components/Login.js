@@ -24,9 +24,12 @@ class Login extends Component {
         event.preventDefault();
         fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u) => {
             console.log("HHHHHHH", u)
+            this.render("signup sucessful")
+
         }).catch((err) => {
             console.log(err);
         })
+      
     }
     handleChange = event => {
         this.setState({ [event.target.name]: event.target.value })
@@ -39,11 +42,11 @@ class Login extends Component {
             <div>
                 <Navbar bg="primary" variant="dark">
                     <Navbar.Brand href="#home">Todo-App</Navbar.Brand>
-                        <Button variant="outline-light"
+                        <Button variant="outline-light "  style={{ position:'absolute',right:200 }}
                             onClick={this.handleShow}
-                        >Login</Button>
-                        <Button variant="outline-light" onMouseOver={this.handleRegister}
-                            onClick={this.handleShow}>SignUp</Button>
+                        >LOGIN</Button>
+                        <Button variant="outline-light"  style={{ position:'absolute',right:100 }} onMouseOver={this.handleRegister}
+                            onClick={this.handleShow}>SIGNUP</Button>
                 </Navbar>
                 <Modal
                     show={this.state.show}
@@ -69,7 +72,7 @@ class Login extends Component {
                         {this.state.regis ? <Button variant="primary"
                             onClick={this.signUp}>SignUp</Button> :
                             <Button onClick={this.login}>Login</Button>
-                        }
+    }
                     </Modal.Footer>
                 </Modal>
             </div>
